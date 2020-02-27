@@ -7,10 +7,10 @@ case class Root(elem: List[String])
 
 case object Node extends Model[Node] {
 
-  val emptyXml: Elem = <root></root>
+  val emptyElemXml: Elem = <root></root>
 
-  val singleXml: Elem = <root><elem>text</elem></root>
+  val singleElemXml: Elem = <root><elem>text</elem></root>
 
-  val listXml: Elem = <root><elem>text</elem><elem>text</elem></root>
+  val list2ElemXml: Elem = <root><elem>text</elem><elem>text</elem></root>
 
 }
