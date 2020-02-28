@@ -9,13 +9,13 @@ abstract class Model[T: Manifest] {
 
   implicit val formats: Formats = DefaultFormats
 
-  def make(jValue: JValue): T = {
+  def apply(jValue: JValue): T = {
     jValue.extract[T]
   }
 
-  def make(xmlElement: Elem): T = {
+  def apply(xmlElement: Elem): T = {
     val jValue = Xml.toJson(xmlElement)
-    make(jValue)
+    apply(jValue)
   }
 
   def toJson(JValue: JValue): String = {
