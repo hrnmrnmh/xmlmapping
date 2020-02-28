@@ -4,15 +4,15 @@ import org.scalatest._
 
 class RootSpec extends FlatSpec with Matchers {
   "Root apply" should " elem count check" in {
-    val listRoot = RootRef(Root.list2ElemXml).toRoot
+    val listRoot = Root(Root.list2ElemXml)
     listRoot.node.elem.size shouldEqual 2
 
-    val emptyRoot = RootRef(Root.emptyElemXml).toRoot
+    val emptyRoot = Root(Root.emptyElemXml)
     emptyRoot.node.elem.size shouldEqual 0
 
     // single is not List
     // throw error
-    val singleRoot = RootRef(Root.singleElemXml).toRoot
+    val singleRoot = Root(Root.singleElemXml)
     singleRoot.node.elem.size shouldEqual 1
   }
 }
