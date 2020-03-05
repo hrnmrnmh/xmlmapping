@@ -1,8 +1,7 @@
 package jp.aohno
 
-import org.json4s._
 import org.json4s.native.Serialization
-import org.json4s.{CustomSerializer, DefaultFormats, Formats, JValue, Xml}
+import org.json4s.{CustomSerializer, DefaultFormats, Formats, JValue, Xml, _}
 
 import scala.xml.Elem
 
@@ -25,6 +24,7 @@ abstract class Model[T: Manifest] {
   }
 
   ))
+
   def apply(xmlElement: Elem): T = {
     val jValue = Xml.toJson(xmlElement)
     apply(jValue)

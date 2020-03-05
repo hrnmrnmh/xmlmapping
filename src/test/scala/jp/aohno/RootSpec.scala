@@ -17,7 +17,7 @@ class RootSpec extends FlatSpec with Matchers {
   }
 }
 
-object RootSpec{
+object RootSpec {
   val emptyElemXml: Elem = <node></node>
 
   val singleElemXml: Elem = <node>
