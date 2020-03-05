@@ -8,14 +8,6 @@ case class Node(elem: List[String])
 
 case object Root  extends Model[Root]{
 
-  override def apply(xmlElement: Elem): Root = {
-    if((xmlElement \ "elem").size == 1){
-      RootSingle.apply(xmlElement).toRoot
-    }else{
-      super.apply(xmlElement)
-    }
-  }
-
   val emptyElemXml: Elem = <node></node>
 
   val singleElemXml: Elem = <node>
